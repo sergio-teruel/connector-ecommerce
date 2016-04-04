@@ -44,3 +44,15 @@ class AccountInvoice(models.Model):
         for record_id in self.ids:
             on_invoice_validated.fire(session, self._name, record_id)
         return res
+
+
+# _columns = {
+#     'sale_order_ids': fields.many2many(
+#         # TODO duplicate with 'sale_ids', replace
+#         'sale.order',
+#         'sale_order_invoice_rel',
+#         'invoice_id',
+#         'order_id',
+#         string='Sale Orders', readonly=True,
+#         help="This is the list of sale orders related to this invoice."),
+# }

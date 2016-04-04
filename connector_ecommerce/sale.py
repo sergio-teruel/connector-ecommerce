@@ -28,7 +28,24 @@ from openerp.addons.connector.connector import ConnectorUnit
 
 _logger = logging.getLogger(__name__)
 
-
+# class stock_warehouse(orm.Model):
+#     _inherit = 'stock.warehouse'
+#
+#     def _get_payment_default(self, cr, uid, context=None):
+#         """ Return a arbitrary account.payment.term record for the
+#         stock.warehouse# ``stock.warehouse`` records are created dynamically
+#         from the backends and the field ``payment_default_id`` needs
+#         a default value.
+#         """
+#         data_obj = self.pool.get('ir.model.data')
+#         __, payment_id = data_obj.get_object_reference(
+#             cr, uid, 'account', 'account_payment_term_immediate')
+#         return payment_id
+#
+#     _defaults = {
+#         # see method docstring for explanation
+#         'payment_default_id': _get_payment_default,
+#     }
 class SaleOrder(models.Model):
     """ Add a cancellation mecanism in the sales orders
 
